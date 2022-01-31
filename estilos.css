@@ -5,8 +5,8 @@
 }
 body {
     background-color: #3a3838;
-    /*background-image: url(img/explosioncolor.jpg);*/
-    background-repeat: no-repeat;
+    /*background-image: url(img/explosioncolor.jpg);    */
+    /*background-repeat: no-repeat;     */
     font-family: monospace;
     color: white;
  }
