@@ -1,0 +1,133 @@
+
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    /* background-color: #232323;    */
+     background-image: url(img/explosioncolor.jpg);
+     background-repeat: no-repeat;
+     font-family: monospace;
+     color: rgb(255, 255, 255);
+ }
+/* Div Colores */
+.square {
+    float: left;
+    width: 30%;
+    height: 0px;
+    padding-bottom: 30%;
+    background-color: rgb(174, 0, 255);
+    margin: 10px;
+    transition: all 0.9s;
+    border-radius: 50%;
+}
+.container {
+    width: 600px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+/* H1 - span */
+h1 {
+    /*background-color: rgb(99, 14, 236);*/
+    background-repeat: round;
+    font-size: 30px;
+    text-align: center;
+    text-transform: uppercase;
+
+}
+#clickedColor{
+    display: block;
+    font-size: 120%;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+/* Div button */
+#stripe {
+    background-color: rgba(109, 28, 240, 0.801);
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    height: 70px;
+    text-align: center;
+    
+}
+/* Span message */
+#message {
+    display: block;
+    font-family: monospace;
+    font-size: 30px;
+    color: rgb(0, 255, 255);
+    align-self: center;
+    /* Inicia Efecto maquina de escribir */
+    white-space: nowrap;
+    border-right: 4px;
+    width: 36ch;
+    animation: typing 2s steps(36), blink .5s;
+    overflow: hidden ;
+}
+@keyframes typing{
+    from {width: 0}
+}
+@keyframes blink {
+    50% {border-color: transparent;}
+}   /* Finaliza Efecto maquina de escribir */
+
+
+/* Button easy & hard */
+.selected {
+    background-color: #f56767;
+    transition: all 0.3s;
+}
+/* Buttons */
+button {
+    font-family: monospace;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    height: 100%;
+    border: none;
+    color: rgb(0, 255, 255);
+    background-color: rgba(125, 52, 243, 0.493);
+    letter-spacing: 1px;
+    transition: all 0.5s;
+    padding: 15px;
+    border-radius: 2px;
+    cursor: pointer;
+}   
+button:hover{
+    background-color: #8c00ff;
+}   
+
+/*  RESPONSIVE */
+
+@media only screen and (max-width: 620px) and (min-width: 501px) { 
+    .container {
+        /*background-color: #232323; */
+        display: flex;
+        max-width: 100%;
+        margin: 0 auto;
+        flex-wrap: wrap;
+        justify-content: center;
+    }    
+    h1 {
+        font-size: 16px;
+        font-family: monospace;
+        width: 100%;
+    }
+    #clickedColor{
+        width: 80%;
+        font-size: 16px;
+        text-align: center;
+    }
+    #message{
+        width: 100%;
+        font-size: 16px;
+    }
+    #reset{
+        width: 5%;
+        font-size: 16px;
+        text-align: left;
+    }
+    
+}
