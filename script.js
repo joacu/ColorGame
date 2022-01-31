@@ -1,8 +1,7 @@
 console.log("script.js cargó exitosamente")
 /* Elementos HTML */
 let square = document.querySelectorAll(".square")
-
-let h1 = document.querySelector("h1")
+let titulo = document.querySelector("h1")
 let clickedColor = document.getElementById("clickedColor")
 let message = document.getElementById("message")
 let resetButton = document.getElementById("reset")
@@ -14,7 +13,7 @@ let selected = document.getElementsByClassName("selected")
 
 /* Variables */
 let numberOfSquares = 6;
-let colors = generateRandomColors(numberOfSquares);
+let colors = generaColorRandom(numberOfSquares);
 let pickedColor = validarColor()
 
 //Le asignamos al span el texto del color ganador
@@ -46,18 +45,18 @@ function resetearJuego() {
 
     resetButton.addEventListener("click", function () {
         resetButton.textContent = "nuevo color"
-        colors = generateRandomColors(numberOfSquares)
+        colors = generaColorRandom(numberOfSquares)
         pickedColor = validarColor()
         for (let i = 0; i < square.length; i++) {
             square[i].style.backgroundColor = colors[i];
             if (pickedColor !== colors[i]) {
             }
         }
-        h1.style.backgroundColor = " ";
+        titulo.style.backgroundColor = " ";
         clickedColor.innerHTML = pickedColor
         message.textContent = " "
         message.style. backgroundColor = "none"
-        console.log("reset OK")
+        console.log("Funcion reset ejecutada exitosamente")
     })
 }
 
@@ -68,7 +67,7 @@ function modoJuego(){
         easyButton.classList.add("selected")
         hardButton.classList.remove("selected")
         numberOfSquares = 3;
-        colors = generateRandomColors(numberOfSquares)
+        colors = generaColorRandom(numberOfSquares)
         pickedColor = validarColor()
         for (let i = 0; i < square.length; i++) {
             if (colors[i] != undefined) {
@@ -77,7 +76,7 @@ function modoJuego(){
             } else {
                 square[i].style.display = "none";
                 square[i].style.backgroundColor = null;
-                console.log("MODO EASY OK")
+                console.log("Modo easy activado")
             }
         }
     })
@@ -85,12 +84,12 @@ function modoJuego(){
         hardButton.classList.add("selected")
         easyButton.classList.remove("selected")
         numberOfSquares = 6;
-        colors = generateRandomColors(numberOfSquares)
+        colors = generaColorRandom(numberOfSquares)
         pickedColor = validarColor()
         for (let i = 0; i < square.length; i++) {
             square[i].style.display = "block";
             square[i].style.backgroundColor = colors[i];
-            console.log("MODO HARD OK")
+            console.log("Modo HARD activado")
         }
     })
 }
@@ -107,7 +106,7 @@ function pintarSquares(){
             if(clickedColor == pickedColor){
                 message.innerHTML = "Correcto"
                 //message.style.backgroundColor = "green"
-                h1.style.backgroundColor = clickedColor;
+                titulo.style.backgroundColor = clickedColor;
                 changeColors(clickedColor);
                 resetButton.textContent = "Nuevo juego?"
             } else {
@@ -126,7 +125,7 @@ function changeColors(color) {
     }
 }
 
-/* Elegimos del arreglo un color random para que sea el ganador */
+/* Elige  un color random para que sea el ganador */
 function validarColor() {
     let numRandom
     if(hardButton.classList.contains("selected")) {
@@ -143,10 +142,11 @@ function randomColor() {
     let g = Math.trunc(Math.random() * (255))
     let b = Math.trunc(Math.random() * (255))
     return "rgb(" + r + ", " + g + ", " + b + ")" 
+    console.log(" retorno rgb ")
 }
 
-//Generamos colores randoms para el array de colores
-function generateRandomColors(num) {
+//Generamos colores randoms para el array de los colores
+function generaColorRandom(num) {
     var arr = new Array(num); 
     for (let i = 0; i < arr.length; i++) {
         arr[i] = randomColor();
