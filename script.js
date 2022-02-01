@@ -1,4 +1,4 @@
-console.log("script.js cargó exitosamente")
+
 /* Elementos HTML */
 let square = document.querySelectorAll(".square")
 let titulo = document.querySelector("h1")
@@ -76,7 +76,7 @@ function modoJuego(){
             } else {
                 square[i].style.display = "none";
                 square[i].style.backgroundColor = null;
-                console.log("Modo easy activado")
+                
             }
         }
     })
@@ -89,7 +89,7 @@ function modoJuego(){
         for (let i = 0; i < square.length; i++) {
             square[i].style.display = "block";
             square[i].style.backgroundColor = colors[i];
-            console.log("Modo HARD activado")
+            
         }
     })
 }

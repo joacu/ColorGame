@@ -5,8 +5,6 @@
 }
 body {
     background-color: #3a3838;
-    /*background-image: url(img/explosioncolor.jpg);    */
-    /*background-repeat: no-repeat;     */
     font-family: monospace;
     color: white;
  }
@@ -59,7 +57,7 @@ h1 {
     font-size: 30px;
     color: rgb(0, 255, 255);
     align-self: center;
-    /* Inicia Efecto maquina de escribir */
+    /* Inicia Efecto maquina de escribir en el texto Bienvenido a Color Game */
     white-space: nowrap;
     border-right: 4px;
     width: 36ch;
@@ -103,7 +101,7 @@ button:hover{
 
 @media only screen and (max-width: 620px) and (min-width: 501px) { 
     .container {
-        /*background-color: #232323; */
+        background-color: #232323;
         display: flex;
         max-width: 100%;
         margin: 0 auto;
